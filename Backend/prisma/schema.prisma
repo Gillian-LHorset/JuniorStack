@@ -1,6 +1,53 @@
+model Categorie {
+  cate_id    Int                @id @default(autoincrement())
+  title      String
+  createdAt DateTime           @default(now())
+  profiles   DevlopperProfile[]
+  projets    Projet[]
+
+  @@map("t_categorie")
+}
+
+model Competence {
+  comp_id   Int                @id @default(autoincrement())
+  name      String
+  createdAt DateTime           @default(now())
+  profiles  DevlopperProfile[]
+  projets   Projet[]
+
+  @@map("t_competence")
+}
+
+model DevlopperProfile {
+  dev_id        Int          @id @default(autoincrement())
+  name          String
+  email         String
+  password      String
+  categorie_fk  Int?
+  categorie     Categorie?  @relation(fields: [categorie_fk], references: [cate_id])
+  competences   Competence[]
+  createdAt     DateTime     @default(now())
+
+  @@map("t_devlopper_profile")
+}
+
+model CompanyProfile {
+  company_id Int      @id @default(autoincrement())
+  name       String
+  email      String
+  password   String
+  createdAt  DateTime @default(now())
+
+  @@map("t_company_profile")
+}
+
 model Projet {
-  id        Int      @id @default(autoincrement())
-  titre     String
-  actif     Boolean  @default(true)
-  createdAt DateTime @default(now())
+  projet_id    Int          @id @default(autoincrement())
+  name         String
+  categorie_fk Int?
+  categorie    Categorie?  @relation(fields: [categorie_fk], references: [cate_id])
+  competences  Competence[]
+  createdAt    DateTime     @default(now())
+
+  @@map("t_projet")
 }

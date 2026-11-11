@@ -8,7 +8,7 @@ Créez un container docker avec la commande suivante :
 
 ```bash
     docker run -d \
-  --name db \
+  --name <container_name> \
   -e POSTGRES_USER=<user> \
   -e POSTGRES_PASSWORD=<password> \
   -e POSTGRES_DB=<db_nom> \
