@@ -1,6 +1,21 @@
-model Projet {
-  id        Int      @id @default(autoincrement())
-  titre     String
-  actif     Boolean  @default(true)
-  createdAt DateTime @default(now())
+model Categorie {
+  cate_id       Int @id @default(autoincrement())
+  title         String
+
+  @@map("t_categorie")
+}
+
+model DevlopperProfile {
+  dev_id        Int      @id @default(autoincrement())
+  name          String
+  email         String    
+  password      String
+  categorie_fk  Categorie?
+  createdAt     DateTime @default(now())
+
+  @@map("t_devlopper_profile")
+}
+
+model CompanyProfile {
+  
 }
