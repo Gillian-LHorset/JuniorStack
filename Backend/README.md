@@ -10,7 +10,7 @@ Créez un container docker avec la commande suivante :
     docker run -d \
   --name <container_name> \
   -e POSTGRES_USER=<user> \
-  -e POSTGRES_PASSWORD=<password> \
+  -e POSTGRES_PASSWORD='<password>' \
   -e POSTGRES_DB=<db_nom> \
   -p <port>:<port> \
   -v pgdata:/var/lib/postgresql/data \
