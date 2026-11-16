@@ -1,39 +1,25 @@
-# Dépendances
-node_modules/
-**/node_modules/
+# Dependencies and AdonisJS build
+node_modules
+build
+tmp
 
-# Build
-Backend/dist/
-Backend/build/
-Frontend/dist/
-Frontend/build/
-
-# Variables d'environnement
+# Secrets
 .env
 .env.local
-.env.*.local
-**/.env
-**/.env.local
+.env.production.local
+.env.development.local
 
-# Logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Frontend assets compiled code
+public/assets
 
-# Cache
-Frontend/.vite/
-.vite/
-*.tsbuildinfo
+# Build tools specific
+npm-debug.log
+yarn-error.log
 
-# Tests / couverture
-coverage/
-**/coverage/
+# Editors specific
+.fleet
+.idea
+.vscode
 
-# OS
+# Platform specific
 .DS_Store
-Thumbs.db
-
-# EDI
-.vscode/
-.idea/
